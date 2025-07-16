@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Marks Analyzer</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    textarea, button { width: 100%; margin-top: 10px; }
+    .output { margin-top: 20px; white-space: pre-line; }
+  </style>
+</head>
+<body>
+
+  <h2>🎓 Student Marks Analyzer</h2>
+  <label>Enter student marks (comma separated):</label>
+  <textarea id="marksInput" rows="4" placeholder="e.g. 56,78,45,89,32,60,90,38"></textarea>
+  <button onclick="analyzeMarks()">Analyze</button>
+
+  <div class="output" id="results"></div>
+
+  <script src="/JS-Basics/webdev6.js"></script>
+
+</body>
+</html>
