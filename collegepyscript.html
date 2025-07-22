@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: beige;
+        }
+        h2{
+            margin-top: 80px;
+        }
+        h3{
+            color: darkslategrey;
+        }
+        .container {
+            background-color: rgb(233, 233, 218);
+            width: 50%;
+            margin-top: 30px;
+            margin-left: 130px;
+            padding: 20px;
+            border: 1px solid #382828;
+            border-radius: 10px;
+        }
+        button {
+            border: 1px solid black;
+            border-radius: 4px;
+            margin: 10px;
+            padding: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: rgb(53, 126, 165);
+        }
+        input, select {
+            padding: 5px;
+            margin: 5px;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <h2>Welcome to Student Management System</h2>
+    <div class="container">
+        <h3>Select Operation</h3>
+        <button onclick="showAdmissionForm()">New Admission</button>
+        <button onclick="showCourses()">View Course Details</button>
+        <button onclick="submitFees()">Submit Fees</button>
+        <button onclick="checkAttendance()">View Attendance</button>
+        <button onclick="updateDetails()">Update Student Details</button>
+    </div>
+    
+    <div id="output" class="container" style="display:none;"></div>
+    
+    <script>
+        function showAdmissionForm() {
+            document.getElementById('output').style.display = 'block';
+            document.getElementById('output').innerHTML = `
+                <h3>Admission Form</h3>
+                <input type="text" id="studentName" placeholder="Student Name"><br>
+                <input type="text" id="fatherName" placeholder="Father's Name"><br>
+                <select id="course">
+                    <option value="BCA">BCA - 1.4L</option>
+                    <option value="BBA">BBA - 80k</option>
+                    <option value="MBA">MBA - 1.3L</option>
+                    <option value="MCA">MCA - 1.5L</option>
+                </select><br>
+                <input type="number" id="fees" placeholder="Enter Fees (Min: 50000)"><br>
+                <button onclick="submitAdmission()">Submit Admission</button>
+            `;
+        }
+        
+        function showCourses() {
+            alert("BCA - 3 Years, 1.4L\nBBA - 3 Years, 80k\nMBA - 2 Years, 1.3L\nMCA - 2 Years, 1.5L");
+        }
+        
+        function submitFees() {
+            let rollNo = prompt("Enter Roll Number:");
+            if (rollNo) {
+                alert("Fee submission functionality will be implemented.");
+            }
+        }
+        
+        function checkAttendance() {
+            let rollNo = prompt("Enter Roll Number:");
+            if (rollNo) {
+                alert("Attendance functionality will be implemented.");
+            }
+        }
+        
+        function updateDetails() {
+            let rollNo = prompt("Enter Roll Number for Update:");
+            if (rollNo) {
+                alert("Update functionality will be implemented.");
+            }
+        }
+        
+        function submitAdmission() {
+            let name = document.getElementById('studentName').value;
+            let fatherName = document.getElementById('fatherName').value;
+            let course = document.getElementById('course').value;
+            let fees = document.getElementById('fees').value;
+            if (name && fatherName && fees >= 50000) {
+                alert("Admission Successful for " + name + " in " + course);
+            } else {
+                alert("Please fill all details correctly.");
+            }
+        }
+    </script>
+</body>
+</html>
